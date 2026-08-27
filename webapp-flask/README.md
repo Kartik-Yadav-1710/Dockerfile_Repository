@@ -1,6 +1,6 @@
 # Simple Web Application
 
-A minimal [Python Flask](https://flask.palletsprojects.com/) web application used as the demo app in the [KodeKloud Docker for Beginners](https://kodekloud.com/courses/docker-for-the-absolute-beginner-hands-on/) course.
+A minimal [Python Flask](https://flask.palletsprojects.com/) web application used as the demo app.
 
 The app exposes two routes:
 
