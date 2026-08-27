@@ -1,13 +1,6 @@
 # Simple Web Application
 
-A minimal [Python Flask](https://flask.palletsprojects.com/) web application used as the demo app.
-
-The app exposes two routes:
-
-| Route | Response |
-|---|---|
-| `/` | `Welcome!` |
-| `/how-are-you` | `I am good, how about you?` |
+A minimal [Python Flask] web application used as the demo app.
 
 ## Run manually (without Docker)
 
@@ -41,30 +34,23 @@ These steps assume a fresh machine.
 
 Then open `http://localhost:5000` and `http://localhost:5000/how-are-you` in a browser.
 
-## Run with Docker
-
-```bash
-git clone https://github.com/mmumshad/simple-webapp-flask.git
-cd simple-webapp-flask
-docker build -t simple-webapp-flask .
-docker run -p 5000:5000 simple-webapp-flask
-```
-
-Then open `http://localhost:5000` and `http://localhost:5000/how-are-you` in a browser.
-
 ## The Dockerfile
 
 ```dockerfile
-FROM ubuntu
+# Get the Base Image
+FROM python:3.12-slim
 
-RUN apt-get update
-RUN apt-get install -y python3-flask
+# Get the working directory
+WORKDIR /app
 
-COPY app.py /opt/app.py
+# Get the source code
+COPY . .
 
-ENV FLASK_APP=/opt/app.py
+# Add the Libraries
+RUN pip install -r requirements.txt
 
-ENTRYPOINT ["flask", "run", "--host=0.0.0.0"]
-```
+# Run the main Application
+CMD ["python", "app.py"]
+
 
 Each instruction mirrors one of the manual steps above — making it easy to see how a Dockerfile is just an automated install script.
