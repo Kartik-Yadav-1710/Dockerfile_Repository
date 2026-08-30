@@ -1,0 +1,35 @@
+services:
+  frontend-container:
+    build:
+      context: ./frontend
+    ports:
+       - "8001:80"
+    networks:
+       - bridge
+
+
+  backend-container:
+    build:
+      context: ./backend
+    ports:
+       - "10000:10000"
+    networks:
+      - bridge
+
+
+  database-container:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: kartik
+    volumes:
+      - /home/ubuntu/volumes/postgres-data-gym:/var/lib/postgresql/18/docker
+    networks:
+      - bridge
+
+
+volumes:
+  postgres-data-gym:
+
+networks:
+  bridge:
+
