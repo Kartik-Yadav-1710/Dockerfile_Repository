@@ -16,7 +16,7 @@ function UserDashboard() {
       return;
     }
     try {
-      const response = await fetch('https://gym-management-system-xvbr.onrender.com/api/dashboard', {
+      const response = await fetch('/api/dashboard', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -47,7 +47,7 @@ function UserDashboard() {
 
   const handleRSVP = async (classId) => {
     try {
-      const response = await fetch('https://gym-management-system-xvbr.onrender.com/api/rsvp', {
+      const response = await fetch('/api/rsvp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
         body: JSON.stringify({ class_id: classId }),
@@ -67,7 +67,7 @@ function UserDashboard() {
 
   const handleMarkAttendance = async () => {
     try {
-      const response = await fetch('https://gym-management-system-xvbr.onrender.com/api/attendance', {
+      const response = await fetch('/api/attendance', {
         method: 'POST',
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
@@ -87,7 +87,7 @@ function UserDashboard() {
 
   const handleRegisterSubscription = async (subId) => {
     try {
-      const response = await fetch('https://gym-management-system-xvbr.onrender.com/api/user-subscriptions', {
+      const response = await fetch('/api/user-subscriptions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
         body: JSON.stringify({ plan_id: subId }),

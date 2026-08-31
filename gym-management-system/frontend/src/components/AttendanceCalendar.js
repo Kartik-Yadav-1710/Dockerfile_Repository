@@ -5,7 +5,7 @@ function AttendanceCalendar() {
   const [attendance, setAttendance] = useState([]);
 
   useEffect(() => {
-    fetch('https://gym-management-system-xvbr.onrender.com/attendance', {
+    fetch('/api/attendance', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     })
       .then((res) => res.json())

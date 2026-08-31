@@ -7,7 +7,7 @@ function HealthProfile() {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
-    fetch('https://gym-management-system-xvbr.onrender.com/api/health-profile', {
+    fetch('/api/health-profile', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     })
       .then((res) => res.json())
@@ -38,7 +38,7 @@ function HealthProfile() {
             goal: Yup.string().required('Required'),
           })}
           onSubmit={(values, { setSubmitting }) => {
-            fetch('http://localhost:5000/api/health-profile', {
+            fetch('/api/health-profile', {
               method: 'PATCH',
               headers: {
                 'Content-Type': 'application/json',

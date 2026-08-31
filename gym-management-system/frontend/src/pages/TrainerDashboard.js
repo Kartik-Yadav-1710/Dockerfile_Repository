@@ -16,7 +16,7 @@ function TrainerDashboard() {
       return;
     }
     try {
-      const response = await fetch('https://gym-management-system-xvbr.onrender.com/api/trainer-dashboard', {
+      const response = await fetch('/api/trainer-dashboard', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await response.json();
@@ -45,7 +45,7 @@ function TrainerDashboard() {
   const handleClassSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://gym-management-system-xvbr.onrender.com/api/classes', {
+      const response = await fetch('/api/classes', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${localStorage.getItem('token')}` },
         body: JSON.stringify(newClass),

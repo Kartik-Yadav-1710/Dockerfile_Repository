@@ -20,7 +20,7 @@ function Register() {
           })}
           onSubmit={(values, { setSubmitting }) => {
             console.log('Submitting register with values:', values);
-            fetch(`${process.env.REACT_APP_API_URL}/api/register`, {
+            fetch(`/api/register`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(values),
