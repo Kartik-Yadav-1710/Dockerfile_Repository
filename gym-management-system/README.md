@@ -14,9 +14,9 @@ This application streamlines gym management by providing a platform where users 
 
 ### Technologies Used
 
-  * **Node.js** for frontend).
-  * **Python** and **pip** (for backend).
-  * **PostgreSQL** database (local or hosted).
+  * **Node.js** (for frontend)
+  * **Python** and **pip** (for backend)
+  * **PostgreSQL** database (local or hosted)
 
 ```
 
