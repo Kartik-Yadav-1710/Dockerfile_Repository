@@ -18,6 +18,5 @@ This application streamlines gym management by providing a platform where users 
   * **Python** and **pip** (for backend).
   * **PostgreSQL** database (local or hosted).
 
-
-SOFTWARE.
 ```
+
